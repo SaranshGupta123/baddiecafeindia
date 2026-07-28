@@ -1,187 +1,288 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Sparkles, Shield, Award } from "lucide-react";
+import {
+  ArrowLeft,
+  Shield,
+  Gamepad2,
+  Calendar,
+  Trophy,
+  Activity,
+} from "lucide-react";
 
 const StaffProfile = () => {
   const { name } = useParams();
 
-  // Database of detailed descriptions for each staff member
+  // Expanded Database of detailed descriptions
   const staffDetails = {
-    Founder: {
-      name: "Founder",
-      role: "Founder & Server Queen",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=queen",
-      bio: "The visionary behind Baddie Cafe India. Oversees the entire community, plans major events, and keeps the server aesthetic running smoothly.",
+    Divaaa: {
+      name: "Divaaa",
+      role: "Founder , Server Queen & Owner",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=Divaaa&backgroundColor=fbcfe8",
+      status: "Streaming on Total Dheet 🎥",
+      bio: "The absolute heart of Baddie Cafe India. Divaa sets the standard for the community's vibe, oversees major creative directions, and manages our shared multimedia content. If there's a watch party or a major server event happening, she's the one pulling the strings.",
       responsibilities: [
-        "Server Management & Vision",
-        "Event Planning & Coordination",
-        "Community Relations & Oversight",
+        "Community Vision & Aesthetic Direction",
+        "Total Dheet Content Management",
+        "Event Hosting & VIP Relations",
       ],
       joined: "January 2024",
-      favoriteGame: "Grand Theft Auto V RP & Genshin Impact",
+      favoriteGame: "Genshin Impact & Among Us",
+      achievements: ["Server Architect", "Content Creator", "Vibe Checker MVP"],
     },
-    "Co-Owner": {
-      name: "Co-Owner",
-      role: "Head of Operations",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=ops",
-      bio: "Handles day-to-day operations, staff performance, and ensures our backend and community guidelines are strictly and fairly enforced.",
+    Saransh: {
+      name: "Saransh",
+      role: "Tech & Ops Lead and Co - Owner",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=Saransh&backgroundColor=c7d2fe",
+      status: "Debugging React routes 🧑‍💻",
+      bio: "Our resident full-stack wizard. Saransh bridges the gap between community and technology. From building custom API bots and web pipelines to troubleshooting horror mods in Minecraft, he ensures the infrastructure of Baddie Cafe never misses a beat.",
       responsibilities: [
-        "Operations Management",
-        "Staff Oversight",
-        "Conflict Resolution",
+        "Discord Bot Development (Node.js/Python)",
+        "Server Security & Automations",
+        "Minecraft Server Maintenance",
+      ],
+      joined: "January 2024",
+      favoriteGame: "GTA 5 RP & Valorant",
+      achievements: ["Code Ninja", "Bug Squasher", "Late Night Grinder"],
+    },
+    Zaemon: {
+      name: "Buri Buri",
+      role: "Director & Manager",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=zaemon&backgroundColor=c7d2fe",
+      status: "Debugging React routes 🧑‍💻",
+      bio: "Our resident full-stack wizard. Buri Buri bridges the gap between community and technology. From building custom API bots and web pipelines to troubleshooting horror mods in Minecraft, he ensures the infrastructure of Baddie Cafe never misses a beat.",
+      responsibilities: [
+        "Discord Bot Development (Node.js/Python)",
+        "Server Security & Automations",
+        "Minecraft Server Maintenance",
+      ],
+      joined: "January 2024",
+      favoriteGame: "GTA 5 RP & Valorant",
+      achievements: ["Code Ninja", "Bug Squasher", "Late Night Grinder"],
+    },
+    Sakshi: {
+      name: "Sakshi",
+      role: "Head of Gaming",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=Sakshi&backgroundColor=fef08a",
+      status: "In queue for Ranked 🎮",
+      bio: "The ultimate lobby host. Louis manages the competitive and casual gaming scene within the server. Need a 5th for Valorant or someone to show you the ropes in a new RP city? Louis is your guy.",
+      responsibilities: [
+        "Tournament Organization",
+        "Game Night Hosting",
+        "Voice Channel Moderation",
       ],
       joined: "February 2024",
-      favoriteGame: "Valorant & Minecraft",
+      favoriteGame: "Valorant",
+      achievements: ["Clutch King", "Lobby Legend", "De-escalation Master"],
     },
-    Manager: {
-      name: "Manager",
-      role: "Server Manager",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=manager",
-      bio: "Coordinates between different departments and helps members navigate the server channels seamlessly.",
+    // Fallback for the rest of the roles
+    "Creative Team": {
+      name: "Creative Team",
+      role: "Aesthetic Directors",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=Creative&backgroundColor=f5d0fe",
+      status: "Rendering video files 🎬",
+      bio: "A collective of highly talented editors, artists, and sound designers. They are responsible for the beautiful graphic collages, clean audio cuts, and overall visual identity of our channels.",
       responsibilities: [
-        "Department Coordination",
-        "Member Support",
-        "Channel Maintenance",
+        "Video Editing",
+        "Graphic Design",
+        "UI/UX Enhancements",
       ],
       joined: "March 2024",
-      favoriteGame: "Among Us & Minecraft",
+      favoriteGame: "Minecraft (Creative Mode)",
+      achievements: ["Pixel Perfect", "Audio Magicians"],
     },
-    Director: {
-      name: "Director",
-      role: "Creative Director",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=director",
-      bio: "Leads the creative team in designing custom channel layouts, banners, graphics, and community visual assets.",
+    "Chat Mod": {
+      name: "Chat Mod",
+      role: "Aesthetic Directors",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=Chat&backgroundColor=f5d0fe",
+      status: "Rendering video files 🎬",
+      bio: "A collective of highly talented editors, artists, and sound designers. They are responsible for the beautiful graphic collages, clean audio cuts, and overall visual identity of our channels.",
       responsibilities: [
-        "Visual Branding & Design",
-        "Creative Direction",
-        "Media Pipeline Management",
+        "Video Editing",
+        "Graphic Design",
+        "UI/UX Enhancements",
       ],
-      joined: "April 2024",
-      favoriteGame: "Genshin Impact",
+      joined: "March 2024",
+      favoriteGame: "Minecraft (Creative Mode)",
+      achievements: ["Pixel Perfect", "Audio Magicians"],
     },
-    "Creative Lead": {
-      name: "Creative Lead",
-      role: "Creative Team",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=creative",
-      bio: "Works closely on video editing, collages, and rich media content for our shared community platforms.",
+    "Female Voice Mod": {
+      name: "Female Voice Mod",
+      role: "Aesthetic Directors",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=FemaleVoice&backgroundColor=f5d0fe",
+      status: "Rendering video files 🎬",
+      bio: "A collective of highly talented editors, artists, and sound designers. They are responsible for the beautiful graphic collages, clean audio cuts, and overall visual identity of our channels.",
       responsibilities: [
-        "Video Editing & Assets",
-        "Content Curation",
-        "Graphic Overlays",
+        "Video Editing",
+        "Graphic Design",
+        "UI/UX Enhancements",
       ],
-      joined: "May 2024",
-      favoriteGame: "Minecraft & Valorant",
+      joined: "March 2024",
+      favoriteGame: "Minecraft (Creative Mode)",
+      achievements: ["Pixel Perfect", "Audio Magicians"],
     },
-    "Minecraft Manager": {
-      name: "Minecraft Manager",
-      role: "Minecraft Manager",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=creative",
-      desc: "Active server staff member maintaining the vibes.",
-      bio: "Manages our custom Minecraft servers, plugins, horror mods, and community build events.",
+    "Male Voice Mod": {
+      name: "Male Voice Mod",
+      role: "Aesthetic Directors",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=MaleVoice&backgroundColor=f5d0fe",
+      status: "Rendering video files 🎬",
+      bio: "A collective of highly talented editors, artists, and sound designers. They are responsible for the beautiful graphic collages, clean audio cuts, and overall visual identity of our channels.",
       responsibilities: [
-        "Server Plugin Configuration",
-        "Modpack Updates",
-        "Community Build Events",
+        "Video Editing",
+        "Graphic Design",
+        "UI/UX Enhancements",
       ],
-      joined: "June 2024",
-      favoriteGame: "Minecraft Hardcore & Survival",
-    },
-    "Gaming Mod": {
-      name: "Gaming Mod",
-      role: "Gaming Moderator",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=gamingmod",
-      bio: "Hosts custom game lobbies, maintains fair play during tournaments, and runs our gaming events.",
-      responsibilities: [
-        "Hosting Game Nights",
-        "Tournaments Moderation",
-        "Voice Channel Vibe Control",
-      ],
-      joined: "July 2024",
-      favoriteGame: "Valorant & GTA V RP",
+      joined: "March 2024",
+      favoriteGame: "Minecraft (Creative Mode)",
+      achievements: ["Pixel Perfect", "Audio Magicians"],
     },
     "Art Mod": {
       name: "Art Mod",
-      role: "Art Moderator",
-      avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=artmod",
-      bio: "Curates the creative channels, supports artists sharing their work, and keeps art spaces inspiring.",
+      role: "Aesthetic Directors",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=Art&backgroundColor=f5d0fe",
+      status: "Rendering video files 🎬",
+      bio: "A collective of highly talented editors, artists, and sound designers. They are responsible for the beautiful graphic collages, clean audio cuts, and overall visual identity of our channels.",
       responsibilities: [
-        "Art Channel Moderation",
-        "Spotlight Features",
-        "Creative Feedback",
+        "Video Editing",
+        "Graphic Design",
+        "UI/UX Enhancements",
       ],
-      joined: "August 2024",
-      favoriteGame: "Genshin Impact & Creative Design",
+      joined: "March 2024",
+      favoriteGame: "Minecraft (Creative Mode)",
+      achievements: ["Pixel Perfect", "Audio Magicians"],
+    },
+    "Minecraft Manager": {
+      name: "Minecraft Manager",
+      role: "Aesthetic Directors",
+      avatar:
+        "https://api.dicebear.com/7.x/bottts/svg?seed=Minecraft&backgroundColor=f5d0fe",
+      status: "Rendering video files 🎬",
+      bio: "A collective of highly talented editors, artists, and sound designers. They are responsible for the beautiful graphic collages, clean audio cuts, and overall visual identity of our channels.",
+      responsibilities: [
+        "Video Editing",
+        "Graphic Design",
+        "UI/UX Enhancements",
+      ],
+      joined: "March 2024",
+      favoriteGame: "Minecraft (Creative Mode)",
+      achievements: ["Pixel Perfect", "Audio Magicians"],
     },
   };
 
-  // Decode profile name from URL params
   const decodedName = decodeURIComponent(name || "");
   const member = staffDetails[decodedName] || {
     name: decodedName,
-    role: "Team Member",
-    avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=default",
-    bio: "An essential member of the Baddie Cafe India team keeping the community active and vibrant.",
-    responsibilities: ["Community Engagement", "Moderation & Support"],
-    joined: "2024",
+    role: "Community Moderator",
+    avatar: `https://api.dicebear.com/7.x/bottts/svg?seed=${decodedName}&backgroundColor=e2e8f0`,
+    status: "Keeping the peace ✌️",
+    bio: "An essential pillar of the Baddie Cafe India team, dedicating their time to keeping the community safe, active, and aesthetically pleasing.",
+    responsibilities: ["Chat Moderation", "Member Support", "Vibe Maintenance"],
+    joined: "Mid 2024",
     favoriteGame: "Various Multiplayer Games",
+    achievements: ["Community Guardian", "Active Voice Caller"],
   };
 
   return (
-    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto z-10 relative">
+    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto z-10 relative">
       <Link
         to="/staff"
-        className="inline-flex items-center gap-2 text-pink-300 hover:text-pink-400 font-bold mb-8 transition-colors uppercase tracking-widest text-sm"
+        className="inline-flex items-center gap-2 text-pink-300 hover:text-pink-400 font-bold mb-8 transition-colors uppercase tracking-widest text-sm bg-white/5 px-4 py-2 rounded-full border border-white/10"
       >
-        <ArrowLeft className="w-4 h-4" /> Back to Staff
+        <ArrowLeft className="w-4 h-4" /> Back to Staff Roster
       </Link>
 
-      <div className="bg-indigo-900/40 backdrop-blur-xl border border-pink-500/30 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-        <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-          <img
-            src={member.avatar}
-            alt={member.name}
-            className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-4 border-pink-400/50 shadow-[0_0_25px_rgba(236,72,153,0.4)] bg-indigo-950 flex-shrink-0"
-          />
-          <div>
-            <h1 className="text-4xl sm:text-5xl font-black text-white mb-2">
+      <div className="bg-indigo-950/60 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        {/* Decorative Background Blur */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-10 text-center md:text-left relative z-10">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 to-fuchsia-500 rounded-full blur-lg opacity-40"></div>
+            <img
+              src={member.avatar}
+              alt={member.name}
+              className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl bg-indigo-900 flex-shrink-0"
+            />
+          </div>
+
+          <div className="flex-1 mt-4 md:mt-0">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-indigo-200 text-xs font-bold mb-4">
+              <Activity className="w-3 h-3 text-emerald-400" />
+              {member.status}
+            </div>
+            <h1 className="text-4xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-indigo-200 mb-3 tracking-tight">
               {member.name}
             </h1>
-            <span className="inline-block px-4 py-1.5 bg-pink-500/20 text-pink-300 rounded-full text-xs font-bold uppercase tracking-widest mb-4 border border-pink-400/30">
+            <span className="inline-block px-5 py-2 bg-gradient-to-r from-pink-500/20 to-fuchsia-500/20 text-pink-300 rounded-full text-sm font-bold uppercase tracking-widest mb-6 border border-pink-400/30">
               {member.role}
             </span>
-            <p className="text-indigo-100/80 text-base sm:text-lg leading-relaxed">
+            <p className="text-indigo-100/80 text-lg leading-relaxed max-w-2xl">
               {member.bio}
             </p>
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-pink-500/20 pt-8">
-          <div className="bg-indigo-950/50 p-6 rounded-2xl border border-pink-500/10">
-            <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <Shield className="w-5 h-5 text-pink-400" /> Key Responsibilities
+        {/* Info Grid Section */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
+          {/* Responsibilities */}
+          <div className="lg:col-span-2 bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-pink-500/20 transition-colors">
+            <h3 className="text-xl font-black text-white mb-6 flex items-center gap-3 uppercase tracking-wide">
+              <Shield className="w-6 h-6 text-pink-400" /> Duty Roster
             </h3>
-            <ul className="space-y-2 text-sm text-indigo-200/80">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {member.responsibilities.map((resp, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-pink-400 rounded-full"></span>{" "}
-                  {resp}
-                </li>
+                <div
+                  key={i}
+                  className="flex items-start gap-3 bg-indigo-950/40 p-4 rounded-xl border border-white/5"
+                >
+                  <div className="mt-1 w-2 h-2 bg-pink-400 rounded-full shadow-[0_0_8px_rgba(236,72,153,0.8)]"></div>
+                  <span className="text-indigo-100/90 font-medium">{resp}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div className="bg-indigo-950/50 p-6 rounded-2xl border border-pink-500/10 space-y-4">
-            <div>
-              <h4 className="text-xs font-bold text-pink-300 uppercase tracking-widest">
-                Joined Team
+          {/* Quick Stats */}
+          <div className="space-y-6">
+            <div className="bg-white/5 backdrop-blur-md p-6 rounded-3xl border border-white/10 hover:border-fuchsia-500/20 transition-colors">
+              <h4 className="text-xs font-bold text-fuchsia-300 uppercase tracking-widest flex items-center gap-2 mb-2">
+                <Calendar className="w-4 h-4" /> Date Joined
               </h4>
-              <p className="text-white font-medium">{member.joined}</p>
+              <p className="text-white font-bold text-lg">{member.joined}</p>
             </div>
-            <div>
-              <h4 className="text-xs font-bold text-pink-300 uppercase tracking-widest">
-                Favorite Games
+
+            <div className="bg-white/5 backdrop-blur-md p-6 rounded-3xl border border-white/10 hover:border-indigo-400/20 transition-colors">
+              <h4 className="text-xs font-bold text-indigo-300 uppercase tracking-widest flex items-center gap-2 mb-2">
+                <Gamepad2 className="w-4 h-4" /> Main Games
               </h4>
-              <p className="text-white font-medium">{member.favoriteGame}</p>
+              <p className="text-white font-bold text-lg">
+                {member.favoriteGame}
+              </p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-md p-6 rounded-3xl border border-white/10 hover:border-emerald-400/20 transition-colors">
+              <h4 className="text-xs font-bold text-emerald-300 uppercase tracking-widest flex items-center gap-2 mb-3">
+                <Trophy className="w-4 h-4" /> Server Badges
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {member.achievements.map((badge, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-1 bg-indigo-950/60 border border-white/10 text-indigo-100 text-xs font-bold rounded-md"
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
