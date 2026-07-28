@@ -1,137 +1,130 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X, Sparkles } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="fixed w-full z-50 bg-indigo-950/60 backdrop-blur-md border-b border-pink-400/20">
+    <nav className="fixed w-full z-50 bg-indigo-950/40 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
+          {/* Brand Logo & Text */}
           <Link
             to="/"
-            className="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-fuchsia-400 uppercase drop-shadow-[0_0_10px_rgba(236,72,153,0.5)]"
+            className="flex items-center gap-3 group hover:opacity-90 transition-all duration-300"
           >
-            Baddie Cafe India
+            <div className="relative">
+              <img
+                src="/logo.png" /* Replace with your actual logo path */
+                alt="Baddie Cafe India Logo"
+                className="w-10 h-10 object-cover rounded-full ring-2 ring-pink-400/50 group-hover:ring-pink-300 transition-all duration-300"
+              />
+              <div className="absolute inset-0 rounded-full bg-pink-400/20 blur-md -z-10 group-hover:bg-pink-400/40 transition-all"></div>
+            </div>
+            <span className="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-fuchsia-400 uppercase drop-shadow-[0_0_10px_rgba(236,72,153,0.5)] group-hover:drop-shadow-[0_0_15px_rgba(236,72,153,0.8)]">
+              Baddie Cafe India
+            </span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
             <Link
               to="/"
-              className="hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold"
+              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
             >
               Home
             </Link>
             <Link
               to="/about"
-              className="hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold"
+              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
             >
               About
             </Link>
             <Link
               to="/people"
-              className="hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold"
+              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
             >
               People
             </Link>
             <Link
               to="/staff"
-              className="hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold"
+              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
             >
               Staff
             </Link>
             <Link
               to="/rules"
-              className="hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold"
+              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
             >
               Rules
             </Link>
             <Link
               to="/faq"
-              className="hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold"
+              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
             >
               FAQ
             </Link>
+
             <a
               href="https://discord.gg/baddiecafeindia"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-gradient-to-r from-pink-400 to-fuchsia-500 hover:from-pink-300 hover:to-fuchsia-400 text-indigo-950 font-black rounded-full transition-all hover:scale-105 uppercase tracking-wide animate-glow"
+              className="group relative px-6 py-2.5 bg-gradient-to-r from-pink-400 to-fuchsia-500 text-indigo-950 font-black rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] uppercase tracking-wide flex items-center gap-2"
             >
               Join Server
+              <Sparkles className="w-4 h-4 group-hover:animate-pulse" />
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden text-pink-300 font-bold"
+            className="lg:hidden text-pink-300 p-2 rounded-full hover:bg-white/5 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? "CLOSE" : "MENU"}
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-indigo-950/95 border-b border-pink-400/20 rounded-b-3xl pb-6">
+      {/* Mobile Menu Dropdown (Glassy) */}
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-indigo-950/80 backdrop-blur-2xl border-b border-white/10 rounded-b-3xl pb-6 shadow-2xl">
           <div className="px-4 pt-4 flex flex-col space-y-4 text-center">
-            <Link
-              to="/"
-              onClick={closeMenu}
-              className="block text-lg font-bold hover:text-pink-300 uppercase tracking-widest transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              onClick={closeMenu}
-              className="block text-lg font-bold hover:text-pink-300 uppercase tracking-widest transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              to="/people"
-              onClick={closeMenu}
-              className="block text-lg font-bold hover:text-pink-300 uppercase tracking-widest transition-colors"
-            >
-              People
-            </Link>
-            <Link
-              to="/staff"
-              onClick={closeMenu}
-              className="block text-lg font-bold hover:text-pink-300 uppercase tracking-widest transition-colors"
-            >
-              Staff
-            </Link>
-            <Link
-              to="/rules"
-              onClick={closeMenu}
-              className="block text-lg font-bold hover:text-pink-300 uppercase tracking-widest transition-colors"
-            >
-              Rules
-            </Link>
-            <Link
-              to="/faq"
-              onClick={closeMenu}
-              className="block text-lg font-bold hover:text-pink-300 uppercase tracking-widest transition-colors"
-            >
-              FAQ
-            </Link>
+            {["Home", "About", "People", "Staff", "Rules", "FAQ"].map(
+              (item) => (
+                <Link
+                  key={item}
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  onClick={closeMenu}
+                  className="block text-lg font-bold text-indigo-100 hover:text-pink-300 uppercase tracking-widest transition-colors"
+                >
+                  {item}
+                </Link>
+              ),
+            )}
             <a
               href="https://discord.gg/baddiecafeindia"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="w-full px-6 py-4 bg-gradient-to-r from-pink-400 to-fuchsia-500 text-indigo-950 font-black rounded-full uppercase tracking-wide"
+              className="w-full flex justify-center items-center gap-2 px-6 py-4 bg-gradient-to-r from-pink-400 to-fuchsia-500 text-indigo-950 font-black rounded-full uppercase tracking-wide shadow-lg"
             >
+              <Sparkles className="w-5 h-5" />
               Join Server
             </a>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
