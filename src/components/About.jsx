@@ -37,7 +37,7 @@ const About = () => {
             Born out of the need for a non-toxic, purely aesthetic space for
             Indian netizens, Baddie Cafe India is more than just a Discord
             server—it's a digital lifestyle. Originally envisioned as a cozy,
-            shared community corner by Saran and Aalloooo, it quickly evolved
+            shared community corner by Saransh and Diva, it quickly evolved
             into a VIP lounge for the internet's main characters.
           </p>
           <p className="text-indigo-100/80 text-lg leading-relaxed">
