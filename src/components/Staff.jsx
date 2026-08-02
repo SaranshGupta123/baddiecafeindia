@@ -6,10 +6,9 @@ const Staff = () => {
   const staffMembers = [
     {
       name: "Divaaa",
-      role: "Founder & Server Queen",
-      avatar:
-        "https://api.dicebear.com/7.x/bottts/svg?seed=Divaaa&backgroundColor=fbcfe8",
-      desc: "The visionary setting the aesthetic and leading the Total Dheet streams.",
+      role: "Founder , Owner & Server Queen",
+      video: "/staff/Divaaa.mp4",
+      desc: "The heart and soul and hot \"Divaaa\" of Baddie Cafe India. Divaaa leads the community with creativity, kindness, and unforgettable events, making every member feel at home.",
     },
     {
       name: "Saransh",
@@ -108,14 +107,31 @@ const Staff = () => {
             to={`/staff/${encodeURIComponent(member.name)}`}
             key={index}
             className="bg-indigo-950/50 backdrop-blur-xl p-8 rounded-3xl border border-white/10 text-center hover:border-pink-500/40 transition-all duration-300 hover:-translate-y-2 group block shadow-lg hover:shadow-[0_10px_30px_rgba(236,72,153,0.15)]"
+            onMouseEnter={(e) => {
+              const video = e.currentTarget.querySelector("video");
+              video?.play();
+            }}
+            onMouseLeave={(e) => {
+              const video = e.currentTarget.querySelector("video");
+              if (video) {
+                video.pause();
+                video.currentTime = 0;
+              }
+            }}
           >
             <div className="relative inline-block mb-6">
               <div className="absolute inset-0 bg-pink-500/20 rounded-full blur-md group-hover:bg-pink-500/40 transition-all"></div>
-              <img
-                src={member.avatar}
-                alt={member.name}
-                className="relative w-28 h-28 mx-auto rounded-full object-cover border-2 border-white/20 group-hover:border-pink-400 transition-colors bg-indigo-900"
-              />
+              <video
+                src={member.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="relative w-190 h-190 mx-auto rounded-full object-cover border-2 border-white/20 group-hover:border-pink-400 transition-colors bg-indigo-900"
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
             <h3 className="text-2xl font-black text-white mb-2 group-hover:text-pink-300 transition-colors tracking-wide">
               {member.name}

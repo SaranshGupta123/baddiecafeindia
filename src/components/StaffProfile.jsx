@@ -16,19 +16,42 @@ const StaffProfile = () => {
   const staffDetails = {
     Divaaa: {
       name: "Divaaa",
-      role: "Founder , Server Queen & Owner",
-      avatar:
-        "https://api.dicebear.com/7.x/bottts/svg?seed=Divaaa&backgroundColor=fbcfe8",
+      role: "Founder , Owner & Server Queen",
+      video: "/staff/Divaaa.mp4",
       status: "Streaming on Total Dheet 🎥",
-      bio: "The absolute heart of Baddie Cafe India. Divaa sets the standard for the community's vibe, oversees major creative directions, and manages our shared multimedia content. If there's a watch party or a major server event happening, she's the one pulling the strings.",
+      bio: "As the Founder, Owner, and Server Queen of Baddie Cafe India, Divaaa is the heart of the community and the vision behind its growth. She is dedicated to creating a welcoming space where people can build genuine friendships, enjoy memorable events, and feel a true sense of belonging. Through her creativity, leadership, and passion, she guides the server's direction while supporting both members and staff. From organizing community activities to inspiring new ideas, Divaaa works tirelessly to ensure Baddie Cafe India remains a fun, inclusive, and vibrant place where everyone is valued and every moment becomes a lasting memory.",
       responsibilities: [
-        "Community Vision & Aesthetic Direction",
-        "Total Dheet Content Management",
-        "Event Hosting & VIP Relations",
+        "Managing the  Server",
+        "Engaging with Community Members",
+        "Leading & Supporting Staff Team",
+        "Welcoming and Assisting Members",
+        "Handling Member Concerns & Reports",
+        "Organizing Community Events",
+        "Maintaining a Positive Environment",
+        "Ensuring Server Safety & Moderation",
+        "Planning Future Community Growth",
       ],
-      joined: "January 2024",
-      favoriteGame: "Genshin Impact & Among Us",
-      achievements: ["Server Architect", "Content Creator", "Vibe Checker MVP"],
+      joined: "2016",
+      favoriteGame: "roblox",
+      achievements: [
+        "Founder",
+        "Server Queen",
+        "Community Builder",
+        "Visionary Leader",
+        "Staff Mentor",
+        "Event Organizer",
+        "People's Favorite",
+        "Community Guardian",
+        "Creative Director",
+        "Culture Creator",
+        "Team Motivator",
+        "Member Advocate",
+        "Positive Vibes Ambassador",
+        "Server Architect",
+        "Community Inspirer",
+        "Leadership Excellence",
+        "Heart of the Community",
+      ],
     },
     Saransh: {
       name: "Saransh",
@@ -207,11 +230,17 @@ const StaffProfile = () => {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-10 text-center md:text-left relative z-10">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 to-fuchsia-500 rounded-full blur-lg opacity-40"></div>
-            <img
-              src={member.avatar}
-              alt={member.name}
-              className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl bg-indigo-900 flex-shrink-0"
-            />
+            <video
+              src={member.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="relative w-90 h-190 mx-auto rounded-full object-cover border-2 border-white/20 group-hover:border-pink-400 transition-colors bg-indigo-900"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div className="flex-1 mt-4 md:mt-0">
