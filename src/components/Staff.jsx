@@ -8,7 +8,7 @@ const Staff = () => {
       name: "Divaaa",
       role: "Founder , Owner & Server Queen",
       video: "/staff/Divaaa.mp4",
-      desc: "The heart and soul and hot \"Divaaa\" of Baddie Cafe India. Divaaa leads the community with creativity, kindness, and unforgettable events, making every member feel at home.",
+      desc: 'The heart and soul and hot "Divaaa" of Baddie Cafe India. Divaaa leads the community with creativity, kindness, and unforgettable events, making every member feel at home.',
     },
     {
       name: "Saransh",
@@ -23,6 +23,12 @@ const Staff = () => {
       avatar:
         "https://api.dicebear.com/7.x/bottts/svg?seed=zaemon&backgroundColor=c7d2fe",
       desc: "Architect behind the server bots, web infrastructure, and backend vibes.",
+    },
+    {
+      name: "Harsh / CrazyLoverX",
+      role: "Art Mod , Artist & Event Host",
+      video: "/staff/Crazy.mp4",
+      desc: "A talented artist, singer, and event host who brings creativity, music, and unforgettable moments to the Baddie Cafe India community.",
     },
     {
       name: "Sakshi",
@@ -71,13 +77,6 @@ const Staff = () => {
       role: "Hype Squad",
       avatar:
         "https://api.dicebear.com/7.x/bottts/svg?seed=MaleVoice&backgroundColor=bbf7d0",
-      desc: "Hosting watch parties, karaoke, and community contests.",
-    },
-    {
-      name: "Art Mod",
-      role: "Hype Squad",
-      avatar:
-        "https://api.dicebear.com/7.x/bottts/svg?seed=Art&backgroundColor=bbf7d0",
       desc: "Hosting watch parties, karaoke, and community contests.",
     },
     {
