@@ -71,7 +71,7 @@ const StaffProfile = () => {
     },
     Zaemon: {
       name: "Buri Buri",
-      role: "Director & Manager",
+      role: "Manager",
       avatar:
         "https://api.dicebear.com/7.x/bottts/svg?seed=zaemon&backgroundColor=c7d2fe",
       status: "Debugging React routes 🧑‍💻",
@@ -100,6 +100,28 @@ const StaffProfile = () => {
       joined: "February 2024",
       favoriteGame: "Valorant",
       achievements: ["Clutch King", "Lobby Legend", "De-escalation Master"],
+    },
+    Luna: {
+      name: "Luna",
+      role: "Female Voice Moderator & Female Dominator",
+      video: "/staff/Maddy.mp4",
+      status: "In queue for Ranked 🎮",
+      bio: "Luna is the server's ultimate paradox. She is undeniably cute and deeply dedicated staff member holds the entire community in the palm of her hand. Known as the resident female voice dominator, she commands any voice channel with effortless authority and a captivating presence. Yet, beneath that fierce, commanding exterior is a remarkably sweet soul who is universally adored by everyone and holds a special place as one of Divaaa's personal favorites. Whether she’s enforcing the rules or melting hearts, Luna is the undisputed princess of the voice chats.",
+      responsibilities: [
+        "Active Voice Channel Domination",
+        "Enforcing Lobby Etiquette",
+        "Welcoming & Guiding New Members",
+        "De-escalating VC Drama",
+        "Hosting Late-Night Social Calls",
+      ],
+      joined: "2025",
+      favoriteGame: "N/A",
+      achievements: [
+        "VC Queen",
+        "Sweet & Savage",
+        "Divaaa's Favorite",
+        "Crowd Controller",
+      ],
     },
     // Fallback for the rest of the roles
     "Creative Team": {

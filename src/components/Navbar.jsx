@@ -6,6 +6,17 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
+  // 👈 Using a mapped array makes routing much cleaner
+  const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "People", path: "/people" },
+    { name: "Staff", path: "/staff" },
+    { name: "About Divaaa", path: "/about-diva" }, // 👈 Points to the new page
+    { name: "Rules", path: "/rules" },
+    { name: "FAQ", path: "/faq" },
+  ];
+
   return (
     <nav className="fixed w-full z-50 bg-indigo-950/40 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,7 +28,7 @@ const Navbar = () => {
           >
             <div className="relative">
               <img
-                src="/logo.png" /* Replace with your actual logo path */
+                src="/logo.png"
                 alt="Baddie Cafe India Logo"
                 className="w-10 h-10 object-cover rounded-full ring-2 ring-pink-400/50 group-hover:ring-pink-300 transition-all duration-300"
               />
@@ -30,42 +41,19 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
-            <Link
-              to="/"
-              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
-            >
-              About
-            </Link>
-            <Link
-              to="/people"
-              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
-            >
-              People
-            </Link>
-            <Link
-              to="/staff"
-              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
-            >
-              Staff
-            </Link>
-            <Link
-              to="/rules"
-              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
-            >
-              Rules
-            </Link>
-            <Link
-              to="/faq"
-              className="text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200"
-            >
-              FAQ
-            </Link>
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-indigo-100 hover:text-pink-300 transition-colors uppercase tracking-widest text-sm font-bold hover:-translate-y-0.5 transform duration-200 ${
+                  item.name === "About Divaaa"
+                    ? "text-pink-300 drop-shadow-[0_0_8px_rgba(236,72,153,0.5)]"
+                    : ""
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
 
             <a
               href="https://discord.gg/baddiecafeindia"
@@ -100,24 +88,27 @@ const Navbar = () => {
       >
         <div className="bg-indigo-950/80 backdrop-blur-2xl border-b border-white/10 rounded-b-3xl pb-6 shadow-2xl">
           <div className="px-4 pt-4 flex flex-col space-y-4 text-center">
-            {["Home", "About", "People", "Staff", "Rules", "FAQ"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  onClick={closeMenu}
-                  className="block text-lg font-bold text-indigo-100 hover:text-pink-300 uppercase tracking-widest transition-colors"
-                >
-                  {item}
-                </Link>
-              ),
-            )}
+            {menuItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={closeMenu}
+                className={`block text-lg font-bold uppercase tracking-widest transition-colors ${
+                  item.name === "About Divaaa"
+                    ? "text-pink-400 hover:text-pink-300"
+                    : "text-indigo-100 hover:text-pink-300"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+
             <a
               href="https://discord.gg/baddiecafeindia"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="w-full flex justify-center items-center gap-2 px-6 py-4 bg-gradient-to-r from-pink-400 to-fuchsia-500 text-indigo-950 font-black rounded-full uppercase tracking-wide shadow-lg"
+              className="w-full flex justify-center items-center gap-2 px-6 py-4 bg-gradient-to-r from-pink-400 to-fuchsia-500 text-indigo-950 font-black rounded-full uppercase tracking-wide shadow-lg mt-2"
             >
               <Sparkles className="w-5 h-5" />
               Join Server

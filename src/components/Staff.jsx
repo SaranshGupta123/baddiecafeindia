@@ -31,6 +31,12 @@ const Staff = () => {
       desc: "A talented artist, singer, and event host who brings creativity, music, and unforgettable moments to the Baddie Cafe India community.",
     },
     {
+      name: "Luna",
+      role: "Female Voice Moderator & Female Dominator",
+      video: "/staff/Maddy.mp4",
+      desc: "Architect behind the server bots, web infrastructure, and backend vibes.",
+    },
+    {
       name: "Sakshi",
       role: "Head of Gaming",
       avatar:

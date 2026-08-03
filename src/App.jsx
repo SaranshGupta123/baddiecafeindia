@@ -8,9 +8,10 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import People from "./components/People";
 import Staff from "./components/Staff";
-import StaffProfile from "./components/StaffProfile"; // 👈 Import the profile page
+import StaffProfile from "./components/StaffProfile";
 import Rules from "./components/Rules";
 import FAQ from "./components/FAQ";
+import AboutDiva from "./components/AboutDiva"; // 👈 Import the new component
 
 const HomePage = () => {
   return (
@@ -34,10 +35,11 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/people" element={<People />} />
             <Route path="/staff" element={<Staff />} />
-            <Route path="/staff/:name" element={<StaffProfile />} />{" "}
-            {/* 👈 Dynamic profile route */}
+            <Route path="/staff/:name" element={<StaffProfile />} />
             <Route path="/rules" element={<Rules />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/about-diva" element={<AboutDiva />} />{" "}
+            {/* 👈 Add the new route */}
           </Routes>
         </div>
 
