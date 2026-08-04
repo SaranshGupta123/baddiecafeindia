@@ -19,9 +19,8 @@ const Staff = () => {
     },
     {
       name: "Buri Buri",
-      role: "Director & Manager",
-      avatar:
-        "https://api.dicebear.com/7.x/bottts/svg?seed=zaemon&backgroundColor=c7d2fe",
+      role: "Manager",
+      video: "/staff/Buri-Buri.mp4",
       desc: "Architect behind the server bots, web infrastructure, and backend vibes.",
     },
     {
@@ -39,9 +38,8 @@ const Staff = () => {
     {
       name: "Sakshi",
       role: "Head of Gaming",
-      avatar:
-        "https://api.dicebear.com/7.x/bottts/svg?seed=Louis&backgroundColor=fef08a",
-      desc: "Keeps the GTA 5 RP and Valorant lobbies strictly toxic-free.",
+      video: "/staff/Sakshi.mp4",
+      desc: "Our adorable Game Handler! 🌸 Sakshi loves bringing fun, new games to the community. She just launched our Minecraft SMP and is already planning to bring epic adventures like GTA 5 RP and more to the server very soon! ✨",
     },
     {
       name: "Creative Team",

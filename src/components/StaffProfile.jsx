@@ -88,18 +88,18 @@ const StaffProfile = () => {
     Sakshi: {
       name: "Sakshi",
       role: "Head of Gaming",
-      avatar:
-        "https://api.dicebear.com/7.x/bottts/svg?seed=Sakshi&backgroundColor=fef08a",
+      video: "/staff/Sakshi.mp4",
       status: "In queue for Ranked 🎮",
-      bio: "The ultimate lobby host. Louis manages the competitive and casual gaming scene within the server. Need a 5th for Valorant or someone to show you the ropes in a new RP city? Louis is your guy.",
+      bio: "As our adorable official Game Handler, Sakshi is the mastermind behind our server's gaming adventures! 🌸 She loves introducing different, fun games for everyone to enjoy. Right now, she’s running our amazing Minecraft SMP, but keep an eye out—she's already planning to bring GTA 5 RP and plenty of other exciting games to the cafe, all while keeping the lobbies strictly toxic-free! ✨",
       responsibilities: [
-        "Tournament Organization",
-        "Game Night Hosting",
-        "Voice Channel Moderation",
+        "Minecraft SMP Management",
+        "New Game Server Launches",
+        "Toxicity Prevention",
+        "Community Event Planning",
       ],
-      joined: "February 2024",
-      favoriteGame: "Valorant",
-      achievements: ["Clutch King", "Lobby Legend", "De-escalation Master"],
+      joined: "2017", // You can change this to her actual join date!
+      favoriteGame: "Minecraft & GTA 5 RP",
+      achievements: ["SMP Architect 🏰", "Vibe Protector 🌸", "Game Scout 🎮"],
     },
     Luna: {
       name: "Luna",
