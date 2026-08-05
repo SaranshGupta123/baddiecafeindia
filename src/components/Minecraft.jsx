@@ -16,18 +16,18 @@ const Minecraft = () => {
   ];
 
   return (
-    <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
       {/* Header Section */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 animate-scale-up">
         <div className="flex justify-center mb-6">
-          <div className="p-4 bg-white/5 rounded-full border border-white/10 shadow-[0_0_30px_rgba(236,72,153,0.3)]">
-            <Gamepad2 className="w-12 h-12 text-pink-400" />
+          <div className="p-4 bg-white/80 rounded-full border border-pink-200 shadow-[0_10px_30px_rgba(244,114,182,0.2)] backdrop-blur-xl">
+            <Gamepad2 className="w-12 h-12 text-pink-500" />
           </div>
         </div>
-        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-fuchsia-400 mb-6 drop-shadow-[0_0_15px_rgba(236,72,153,0.5)]">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-400 mb-6 drop-shadow-sm">
           Baddie Cafe SMP
         </h1>
-        <p className="text-xl text-indigo-200/80 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-pink-800/80 max-w-3xl mx-auto leading-relaxed font-medium">
           Dive into our exclusive community Minecraft server! Whether you love
           building massive castles, going on epic mining expeditions, or just
           chilling with friends, there's a spot for you here.
@@ -35,27 +35,30 @@ const Minecraft = () => {
       </div>
 
       {/* How to Join Card */}
-      <div className="max-w-4xl mx-auto mb-20 group relative">
-        <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-fuchsia-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-        <div className="relative bg-indigo-950/60 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      <div className="max-w-4xl mx-auto mb-24 group relative">
+        <div className="absolute -inset-1 bg-gradient-to-r from-pink-300 to-rose-300 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-60 transition duration-500"></div>
+        <div className="relative bg-white/80 backdrop-blur-2xl border border-pink-200 rounded-[2.5rem] p-8 md:p-12 shadow-[0_15px_40px_rgba(244,114,182,0.15)] flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="flex-1">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center md:justify-start gap-3">
-              <Server className="w-8 h-8 text-pink-400" />
+            <h2 className="text-2xl md:text-3xl font-black text-pink-950 mb-4 flex items-center justify-center md:justify-start gap-3 uppercase tracking-wide">
+              <Server className="w-8 h-8 text-pink-500" />
               How to Join the Server
             </h2>
-            <p className="text-indigo-200/80 mb-6 text-lg">
+            <p className="text-pink-800/80 mb-6 text-lg font-medium">
               To keep our server safe and fun, the server IP is exclusive to our
               Discord members. Join our community to start playing!
             </p>
             <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-sm font-bold text-indigo-100 bg-white/5 p-3 rounded-xl border border-white/5">
-                <ShieldCheck className="w-5 h-5 text-emerald-400" />
+              <div className="flex items-center gap-3 text-sm font-bold text-pink-900 bg-pink-50 p-4 rounded-2xl border border-pink-100 shadow-inner">
+                <ShieldCheck className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                 Step 1: Join the Baddie Cafe Discord
               </div>
-              <div className="flex items-center gap-3 text-sm font-bold text-indigo-100 bg-white/5 p-3 rounded-xl border border-white/5">
-                <Pickaxe className="w-5 h-5 text-fuchsia-400" />
+              <div className="flex items-center gap-3 text-sm font-bold text-pink-900 bg-pink-50 p-4 rounded-2xl border border-pink-100 shadow-inner">
+                <Pickaxe className="w-5 h-5 text-rose-500 flex-shrink-0" />
                 Step 2: Head over to the{" "}
-                <span className="text-pink-300">#minecraft</span> channel
+                <span className="text-pink-600 bg-white px-2 py-0.5 rounded-md border border-pink-200">
+                  #minecraft
+                </span>{" "}
+                channel
               </div>
             </div>
           </div>
@@ -65,7 +68,7 @@ const Minecraft = () => {
               href="https://discord.gg/txJ2GtV6GT"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-gradient-to-r from-pink-400 to-fuchsia-500 text-indigo-950 font-black rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] uppercase tracking-wide flex items-center justify-center gap-2 whitespace-nowrap"
+              className="px-8 py-4 bg-gradient-to-r from-pink-400 to-rose-400 text-white font-black rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_25px_rgba(244,114,182,0.4)] uppercase tracking-wider flex items-center justify-center gap-2 whitespace-nowrap shadow-md"
             >
               Get The IP
               <ArrowRight className="w-5 h-5" />
@@ -76,24 +79,26 @@ const Minecraft = () => {
 
       {/* Gallery Section */}
       <div className="space-y-8">
-        <h2 className="text-3xl font-black uppercase tracking-tighter text-center text-white mb-10">
-          Server Highlights
+        <h2 className="text-3xl font-black uppercase tracking-tighter text-center text-pink-950 mb-10">
+          Server <span className="text-pink-500">Highlights</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {galleryImages.map((src, index) => (
             <div
               key={index}
-              className="group relative h-64 md:h-80 rounded-2xl overflow-hidden border border-white/10 cursor-pointer"
+              className="group relative h-64 md:h-80 rounded-3xl overflow-hidden border border-pink-200 cursor-pointer bg-white/70 shadow-[0_8px_30px_rgba(244,114,182,0.15)] hover:shadow-[0_15px_35px_rgba(244,114,182,0.25)] transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-indigo-950/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-pink-950/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
               <img
                 src={src}
                 alt={`Minecraft Server view ${index + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <p className="text-white font-bold tracking-wide">
-                  Epic Builds & Vibes
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-20 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                <p className="text-white font-bold tracking-wide text-lg drop-shadow-md">
+                  ✨ Epic Builds & Vibes
                 </p>
               </div>
             </div>

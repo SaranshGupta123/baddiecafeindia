@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-glow: glow 2s ease-in-out infinite alternate;
-  --animate-scale-up: scaleUp 0.8s ease-out forwards;
-  --animate-spin-slow: spin 4s linear infinite;
-  --animate-float: float 3s ease-in-out infinite;
+  --color-purple-950: #1a0b2e;
+  /* Deep cozy purple instead of standard indigo */
+
+  --animate-glow: glow 3s ease-in-out infinite alternate;
+  --animate-scale-up: scaleUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-spin-slow: spin 6s linear infinite;
+  --animate-float: float 4s ease-in-out infinite;
 }
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
   }
 
   to {
-    box-shadow: 0 0 25px rgba(236, 72, 153, 0.8), 0 0 10px rgba(217, 70, 239, 0.5);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.7), 0 0 15px rgba(192, 132, 252, 0.5);
   }
 }
 
 @keyframes scaleUp {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(10px);
+    transform: scale(0.9) translateY(20px);
   }
 
   to {
@@ -31,14 +34,32 @@
 
 @keyframes float {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-12px) rotate(2deg);
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* Optional: Make the whole app font a bit softer if you use Google Fonts */
+body {
+  font-family: 'Nunito', 'Quicksand', system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

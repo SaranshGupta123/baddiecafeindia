@@ -4,95 +4,66 @@ import { Mail, Heart, Sparkles } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 pt-16 pb-8 bg-indigo-950/80 backdrop-blur-xl border-t border-pink-500/20 shadow-[0_-10px_30px_rgba(0,0,0,0.2)]">
+    <footer className="relative z-10 pt-16 pb-8 bg-[#1a0b2e] border-t border-purple-800/30 shadow-[0_-10px_30px_rgba(0,0,0,0.3)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Column 1: Brand & Info */}
-          <div className="space-y-4 text-center md:text-left">
+          {/* Brand */}
+          <div className="space-y-5 text-center md:text-left">
             <Link
               to="/"
-              className="inline-block text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-fuchsia-400 uppercase drop-shadow-[0_0_10px_rgba(236,72,153,0.3)] hover:drop-shadow-[0_0_15px_rgba(236,72,153,0.6)] transition-all duration-300"
+              className="inline-block text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 uppercase drop-shadow-[0_0_10px_rgba(236,72,153,0.3)] hover:drop-shadow-[0_0_15px_rgba(236,72,153,0.6)] transition-all duration-300"
             >
               Baddie Cafe India
             </Link>
-            <p className="text-indigo-200/70 leading-relaxed font-medium max-w-xs mx-auto md:mx-0">
-              A cozy, coquette-infused corner of Discord. Keep it cute, keep it
-              fun, keep it drama-free.
+            <p className="text-purple-200/80 leading-relaxed font-medium max-w-xs mx-auto md:mx-0">
+              Your favorite aesthetic corner of the internet. We keep it cute,
+              we keep it fun, and we leave the drama at the door. 💅
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-sm font-bold tracking-wider shadow-[0_0_10px_rgba(236,72,153,0.1)]">
-              <Heart className="w-4 h-4 fill-pink-400 text-pink-400 animate-pulse" />
-              400+ Members
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-900/30 text-purple-200 text-sm font-bold tracking-wider hover:bg-purple-800/40 transition-colors">
+              <Heart className="w-4 h-4 fill-pink-500 text-pink-500 animate-pulse" />
+              500+ Besties Inside
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Links */}
           <div className="text-center md:text-left">
             <h3 className="text-white font-black uppercase tracking-widest mb-6 flex items-center justify-center md:justify-start gap-2">
-              <Sparkles className="w-4 h-4 text-pink-400" /> Explore
+              <Sparkles className="w-4 h-4 text-pink-400" /> The Tea
             </h3>
-            <ul className="space-y-3 text-indigo-200/80 font-medium">
-              <li>
-                <Link
-                  to="/about"
-                  className="hover:text-pink-400 hover:translate-x-2 transition-all duration-300 inline-block"
-                >
-                  The Lore (About)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about-diva"
-                  className="text-pink-300 hover:text-pink-400 hover:translate-x-2 transition-all duration-300 inline-block font-bold"
-                >
-                  Meet Divaaa (Owner)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/rules"
-                  className="hover:text-pink-400 hover:translate-x-2 transition-all duration-300 inline-block"
-                >
-                  Server Rules
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/staff"
-                  className="hover:text-pink-400 hover:translate-x-2 transition-all duration-300 inline-block"
-                >
-                  Meet the Staff
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/faq"
-                  className="hover:text-pink-400 hover:translate-x-2 transition-all duration-300 inline-block"
-                >
-                  FAQ
-                </Link>
-              </li>
+            <ul className="space-y-3 text-purple-200/80 font-medium">
+              {["About", "About Divaaa", "Rules", "Meet the Staff", "FAQ"].map(
+                (link, i) => (
+                  <li key={i}>
+                    <Link
+                      to={`/${link.toLowerCase().replace(/ /g, "-")}`}
+                      className="hover:text-pink-400 hover:translate-x-1 transition-all duration-300 inline-block"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
-          {/* Column 3: Contact & Socials */}
+          {/* Socials */}
           <div className="text-center md:text-left">
             <h3 className="text-white font-black uppercase tracking-widest mb-6">
-              Connect
+              Stalk Us
             </h3>
-
-            {/* Email */}
             <a
               href="mailto:support@baddiecafeindia.com"
-              className="group flex items-center justify-center md:justify-start gap-3 text-indigo-200/80 hover:text-pink-400 transition-colors mb-6 font-medium"
+              className="group flex items-center justify-center md:justify-start gap-3 text-purple-200/80 hover:text-pink-400 transition-colors mb-6 font-medium"
             >
-              <div className="p-2 rounded-lg bg-white/5 group-hover:bg-pink-500/20 border border-white/5 group-hover:border-pink-500/50 transition-all duration-300 shadow-lg">
-                <Mail className="w-5 h-5" />
+              {/* Mail Icon Wrapper */}
+              <div className="p-2 rounded-xl bg-purple-900/50 group-hover:bg-pink-500/20 border border-purple-700/50 group-hover:border-pink-400/50 transition-all duration-300">
+                <Mail className="w-4 h-4 text-purple-300 group-hover:text-pink-300" />
               </div>
               support@baddiecafeindia.com
             </a>
 
-            {/* Social Buttons with Custom SVGs */}
+            {/* Social Icons Container */}
             <div className="flex justify-center md:justify-start gap-4">
               {/* Discord Button */}
               <a
@@ -100,7 +71,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Discord"
-                className="w-12 h-12 rounded-full bg-indigo-900/50 border border-indigo-400/30 flex items-center justify-center hover:bg-[#5865F2] hover:border-transparent hover:text-white transition-all duration-300 text-indigo-300 shadow-lg hover:scale-110 hover:shadow-[0_0_20px_rgba(88,101,242,0.6)] group"
+                className="w-12 h-12 rounded-full bg-purple-900/50 border border-purple-700/50 flex items-center justify-center hover:bg-[#5865F2] hover:border-transparent hover:text-white transition-all duration-300 text-purple-300 shadow-lg hover:scale-110 hover:shadow-[0_0_20px_rgba(88,101,242,0.6)] group"
               >
                 <svg
                   className="w-6 h-6 fill-current transition-transform group-hover:scale-110"
@@ -116,7 +87,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-12 h-12 rounded-full bg-indigo-900/50 border border-pink-500/30 flex items-center justify-center hover:bg-gradient-to-tr hover:from-orange-500 hover:via-pink-500 hover:to-fuchsia-500 hover:border-transparent hover:text-white transition-all duration-300 text-pink-300 shadow-lg hover:scale-110 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] group"
+                className="w-12 h-12 rounded-full bg-purple-900/50 border border-purple-700/50 flex items-center justify-center hover:bg-gradient-to-tr hover:from-orange-500 hover:via-pink-500 hover:to-fuchsia-500 hover:border-transparent hover:text-white transition-all duration-300 text-purple-300 shadow-lg hover:scale-110 hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] group"
               >
                 <svg
                   className="w-5 h-5 fill-current transition-transform group-hover:scale-110"
@@ -132,7 +103,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="w-12 h-12 rounded-full bg-indigo-900/50 border border-red-500/30 flex items-center justify-center hover:bg-red-600 hover:border-transparent hover:text-white transition-all duration-300 text-red-400 shadow-lg hover:scale-110 hover:shadow-[0_0_20px_rgba(220,38,38,0.6)] group"
+                className="w-12 h-12 rounded-full bg-purple-900/50 border border-purple-700/50 flex items-center justify-center hover:bg-red-600 hover:border-transparent hover:text-white transition-all duration-300 text-purple-300 shadow-lg hover:scale-110 hover:shadow-[0_0_20px_rgba(220,38,38,0.6)] group"
               >
                 <svg
                   className="w-5 h-5 fill-current transition-transform group-hover:scale-110"
@@ -145,13 +116,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Copyright Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-indigo-200/50 text-sm font-medium tracking-wider uppercase text-center md:text-left">
-            © {new Date().getFullYear()} Baddie Cafe India. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-purple-800/50 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-purple-400/60 text-sm font-medium tracking-wider uppercase text-center md:text-left">
+            © {new Date().getFullYear()} BADDIE CAFE INDIA.
           </div>
-          <div className="text-pink-400/80 text-sm font-bold tracking-widest uppercase flex items-center gap-2 hover:text-pink-300 transition-colors cursor-default">
-            Stay Cute <Heart className="w-4 h-4 fill-pink-400/80" />
+          <div className="text-pink-500 text-sm font-bold tracking-widest uppercase flex items-center gap-2 cursor-default">
+            STAY CUTE <Heart className="w-4 h-4 fill-pink-500" />
           </div>
         </div>
       </div>

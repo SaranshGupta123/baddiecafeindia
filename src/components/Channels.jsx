@@ -1,54 +1,43 @@
 import React from "react";
-import { Heart, Gamepad2, Popcorn, Gift, Mic, Camera } from "lucide-react";
+import {
+  Headphones,
+  Tv,
+  PartyPopper,
+  Gamepad2,
+  Camera,
+  Star,
+} from "lucide-react";
 
 const serverActivities = [
   {
-    // Replaced 🎀
-    icon: (
-      <Heart className="w-10 h-10 text-pink-400 drop-shadow-[0_0_10px_rgba(244,114,182,0.5)]" />
-    ),
-    name: "#chill-zone",
-    desc: "Just vibe, listen to Lo-Fi, and share your daily aesthetics.",
+    icon: <Headphones className="w-10 h-10 text-pink-500" />,
+    name: "The Lounge",
+    desc: "Where we drop our Pinterest boards, listen to lofi, and literally just exist together. No stress allowed.",
   },
   {
-    // Replaced 🎮
-    icon: (
-      <Gamepad2 className="w-10 h-10 text-indigo-400 drop-shadow-[0_0_10px_rgba(129,140,248,0.5)]" />
-    ),
-    name: "#game-nights",
-    desc: "VC-driven sessions: Valorant, Among Us, Roblox & Minecraft.",
+    icon: <Gamepad2 className="w-10 h-10 text-rose-500" />,
+    name: "Game Nights",
+    desc: "Screaming in Valorant, getting betrayed in Among Us, and building cute stuff in Minecraft.",
   },
   {
-    // Replaced 🍿
-    icon: (
-      <Popcorn className="w-10 h-10 text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]" />
-    ),
-    name: "#movie-streams",
-    desc: "Weekly movie watch parties, anime binges, & YT marathons.",
+    icon: <Tv className="w-10 h-10 text-fuchsia-500" />,
+    name: "Watch Parties",
+    desc: "Grabbing our snacks and binging movies, anime, or unhinged YouTube video essays all night long.",
   },
   {
-    // Replaced 🎁
-    icon: (
-      <Gift className="w-10 h-10 text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
-    ),
-    name: "#giveaways",
-    desc: "Discord Nitro, game keys, and cute aesthetic merch drops.",
+    icon: <Star className="w-10 h-10 text-pink-400" />,
+    name: "Spoils & Giveaways",
+    desc: "Because you deserve nice things. We randomly drop Nitro, game keys, and aesthetic merch.",
   },
   {
-    // Replaced 🎤
-    icon: (
-      <Mic className="w-10 h-10 text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]" />
-    ),
-    name: "#events",
-    desc: "Karaoke nights, talent shows, and community art contests.",
+    icon: <PartyPopper className="w-10 h-10 text-rose-400" />,
+    name: "Messy Events",
+    desc: "Chaotic karaoke nights, talent shows where we just laugh, and community art contests.",
   },
   {
-    // Replaced 📸
-    icon: (
-      <Camera className="w-10 h-10 text-fuchsia-400 drop-shadow-[0_0_10px_rgba(232,121,249,0.5)]" />
-    ),
-    name: "#social-hub",
-    desc: "Drop your Insta fits, TikTok clips, and YT links here.",
+    icon: <Camera className="w-10 h-10 text-fuchsia-400" />,
+    name: "The Social Hub",
+    desc: "Spam us with your TikToks, Instagram fit checks, and food pics. Hype each other up!",
   },
 ];
 
@@ -56,15 +45,18 @@ const Channels = () => {
   return (
     <section
       id="channels"
-      className="py-24 relative z-10 bg-indigo-950/30 border-y border-white/5 backdrop-blur-xl"
+      className="py-24 relative z-10 bg-white/40 border-y border-pink-200 backdrop-blur-2xl"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white drop-shadow-md">
-            What we <span className="text-pink-400">Do</span>
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-pink-950">
+            What goes on{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-400">
+              Inside
+            </span>
           </h2>
-          <p className="text-fuchsia-200/70 mt-4 text-lg font-medium">
-            Peek inside the server channels.
+          <p className="text-pink-800/70 mt-4 text-lg font-medium">
+            Sneak a peek at our favorite channels.
           </p>
         </div>
 
@@ -72,15 +64,15 @@ const Channels = () => {
           {serverActivities.map((item, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 hover:border-pink-500/40 hover:bg-white/10 transition-all duration-500 group hover:-translate-y-2 shadow-lg hover:shadow-[0_10px_40px_rgba(236,72,153,0.15)]"
+              className="bg-white/80 backdrop-blur-xl p-8 rounded-[2rem] border border-pink-100 hover:border-pink-300 hover:bg-white transition-all duration-500 group hover:-translate-y-2 shadow-[0_8px_30px_rgb(255,192,203,0.3)] hover:shadow-[0_15px_40px_rgb(244,114,182,0.4)]"
             >
-              <div className="mb-6 transform group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300">
+              <div className="mb-6 transform group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300 bg-pink-50 w-16 h-16 flex items-center justify-center rounded-2xl shadow-inner border border-pink-100">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-black text-white group-hover:text-pink-300 transition-colors mb-3 tracking-wide">
+              <h3 className="text-xl font-black text-pink-950 group-hover:text-pink-600 transition-colors mb-3 tracking-wide">
                 {item.name}
               </h3>
-              <p className="text-indigo-100/70 font-medium leading-relaxed">
+              <p className="text-pink-800/80 font-medium leading-relaxed">
                 {item.desc}
               </p>
             </div>
