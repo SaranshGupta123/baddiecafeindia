@@ -1,5 +1,12 @@
 import React from "react";
-import { Calendar, Crown, Cake, Sparkles, Heart } from "lucide-react";
+import {
+  Calendar,
+  Crown,
+  Cake,
+  Sparkles,
+  Heart,
+  PartyPopper,
+} from "lucide-react";
 
 const ServerCalendar = () => {
   const events = [
@@ -20,7 +27,7 @@ const ServerCalendar = () => {
       highlight: true,
     },
     {
-      title: "Batak Day (Server Special Celebration)",
+      title: "Batak Day",
       date: "August 18",
       icon: <Sparkles className="w-7 h-7 text-pink-500" />,
       desc: "The legendary Batak Day of Baddie Cafe India! A sacred community tradition packed with chaotic energy, special role events, voice channel takeovers, and absolute good vibes.",
@@ -36,6 +43,14 @@ const ServerCalendar = () => {
       highlight: true,
     },
     {
+      title: "Shivraj Birthday",
+      date: "August 8",
+      icon: <Cake className="w-7 h-7 text-pink-500" />,
+      desc: "Celebrating Shivraj from our Creative Team! Get ready for incredible aesthetic appreciation, high-res visual celebrations, and massive love from the whole cafe.",
+      badge: "Creative Team's Day",
+      highlight: true,
+    },
+    {
       title: "Harsh / CrazyLoverX Birthday",
       date: "August 21",
       icon: <Cake className="w-7 h-7 text-pink-500" />,
@@ -43,7 +58,6 @@ const ServerCalendar = () => {
       badge: "Artist's Day",
       highlight: true,
     },
-
     {
       title: "Luna Birthday",
       date: "October 13",

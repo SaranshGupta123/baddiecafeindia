@@ -68,7 +68,7 @@ const StaffProfile = () => {
       favoriteGame: "GTA 5 RP & Valorant",
       achievements: ["Code Ninja", "Bug Squasher", "Late Night Grinder"],
     },
-   "Buri-Buri": {
+   "Buri-Buri" : {
       name: "Buri Buri",
       role: "Manager",
       video: "/staff/Buri-Buri.mp4",
